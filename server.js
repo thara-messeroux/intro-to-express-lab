@@ -25,8 +25,6 @@ const shoes = [
     { name: "Fifty-Inch Heels", price: 175, type: "heel" }
 ];
 
-
-
 // 1. Be Polite, Greet the User
 app.get("/greetings/:username", (req, res) => {
     // Get the username from the URL
@@ -81,10 +79,10 @@ app.get("/collectibles/:index", (req, res) => {
     res.send(`So, you want the ${item.name}? For $${item.price}, it can be yours!`);
 });
 
-
 // http://localhost:3000/collectibles/0
 // http://localhost:3000/collectibles/1
 // http://localhost:3000/collectibles/5
+
 
 // 4️. Hello with Query Parameters
 app.get("/hello", (req, res) => {

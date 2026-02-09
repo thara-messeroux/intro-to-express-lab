@@ -29,11 +29,11 @@ const shoes = [
 
 // 1. Be Polite, Greet the User
 app.get("/greetings/:username", (req, res) => {
-  // Get the username from the URL
-  const username = req.params.username;
+    // Get the username from the URL
+    const username = req.params.username;
 
-  // Send a friendly greeting
-  res.send(`Hello there, ${username}!`);
+    // Send a friendly greeting
+    res.send(`Hello there, ${username}!`);
 });
 
 // http://localhost:3000/greetings/Thara
@@ -142,6 +142,6 @@ app.get("/shoes", (req, res) => {
 
 // Start listening for requests
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+    console.log(`Listening on port ${PORT}`);
 });
 

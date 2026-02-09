@@ -14,6 +14,14 @@ const collectibles = [
     { name: "vintage 1970s yogurt SOLD AS-IS", price: 0.99 },
 ];
 
+// Data for shoes
+const shoes = [
+    { name: "Nike Air Max", price: 120, type: "sneaker" },
+    { name: "Adidas Ultraboost", price: 180, type: "sneaker" },
+    { name: "Clarks Desert Trek", price: 95, type: "casual" },
+    { name: "Allen Edmonds Park Avenue", price: 395, type: "dress" },
+];
+
 
 // 1. Be Polite, Greet the User
 app.get("/greetings/:username", (req, res) => {
@@ -82,6 +90,44 @@ app.get("/hello", (req, res) => {
 
 // http://localhost:3000/hello?name=Thara
 // http://localhost:3000/hello
+
+
+// 5️⃣ Shoes filter route
+app.get("/shoes", (req, res) => {
+    let filteredShoes = shoes;
+
+    const minPrice = Number(req.query["min-price"]);
+    const maxPrice = Number(req.query["max-price"]);
+    const type = req.query.type;
+
+    // Filter by minimum price
+    if (!isNaN(minPrice)) {
+        filteredShoes = filteredShoes.filter(
+            (shoe) => shoe.price >= minPrice
+        );
+    }
+
+    // Filter by maximum price
+    if (!isNaN(maxPrice)) {
+        filteredShoes = filteredShoes.filter(
+            (shoe) => shoe.price <= maxPrice
+        );
+    }
+
+    // Filter by type
+    if (type) {
+        filteredShoes = filteredShoes.filter(
+            (shoe) => shoe.type === type
+        );
+    }
+
+    res.json(filteredShoes);
+});
+
+// http://localhost:3000/shoes
+// http://localhost:3000/shoes?type=sneaker
+// http://localhost:3000/shoes?min-price=100
+// http://localhost:3000/shoes?min-price=100&max-price=200
 
 
 // Start listening for requests

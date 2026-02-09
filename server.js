@@ -63,19 +63,24 @@ app.get("/roll/:number", (req, res) => {
 // 3. I Want THAT One!
 app.get("/collectibles/:index", (req, res) => {
     const index = Number(req.params.index);
+
+    // Validate that index is a real number
+    if (isNaN(index)) {
+        res.send("This item is not yet in stock. Check back soon!");
+        return;
+    }
+
     const item = collectibles[index];
 
-    // If item does not exist
+    // Validate that the index exists in the array
     if (!item) {
         res.send("This item is not yet in stock. Check back soon!");
         return;
     }
 
-    // If item exists
-    res.send(
-        `So, you want the ${item.name}? For $${item.price}, it can be yours!`
-    );
+    res.send(`So, you want the ${item.name}? For $${item.price}, it can be yours!`);
 });
+
 
 // http://localhost:3000/collectibles/0
 // http://localhost:3000/collectibles/1

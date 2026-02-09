@@ -69,6 +69,20 @@ app.get("/collectibles/:index", (req, res) => {
 // http://localhost:3000/collectibles/1
 // http://localhost:3000/collectibles/5
 
+// 4️. Hello with Query Parameters
+app.get("/hello", (req, res) => {
+    const name = req.query.name;
+
+    if (name) {
+        res.send(`Hello, ${name}!`);
+    } else {
+        res.send("Hello there!");
+    }
+});
+
+// http://localhost:3000/hello?name=Thara
+// http://localhost:3000/hello
+
 
 // Start listening for requests
 app.listen(PORT, () => {

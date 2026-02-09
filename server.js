@@ -101,13 +101,14 @@ app.get("/hello", (req, res) => {
 // http://localhost:3000/hello
 
 
-// 5️⃣ Shoes filter route
+// 5️. Shoes filter route
 app.get("/shoes", (req, res) => {
     let filteredShoes = shoes;
 
     const minPrice = Number(req.query["min-price"]);
     const maxPrice = Number(req.query["max-price"]);
-    const type = req.query.type;
+    const type = req.query.type ? req.query.type.toLowerCase() : null;
+
 
     // Filter by minimum price
     if (!isNaN(minPrice)) {

@@ -21,8 +21,20 @@ Learning this helps you understand how:
 - How to validate user input (ex: handling “not a number”)
 - How to return data as JSON for API-style routes
 
-## How to Run
+## How to Run This Project
 1. Install dependencies:
-   ```bash
+```bash
    npm install
 ```
+
+2. Start the server:
+
+```bash
+   node server.js
+```
+
+3. Open your browser and visit:
+```bash
+http://localhost:3000
+```
+

@@ -1,6 +1,6 @@
 # Intro to Express Lab
 
-## Purpose (in plain English)
+## Purpose
 This lab teaches the basics of building a small web server using **Express** (a Node.js framework).
 
 A web server is a program that listens for requests (URLs) and sends responses back (text or JSON).
@@ -105,3 +105,66 @@ It simulates how a real online store might look up products by ID.
 - `/collectibles/0` → shiny ball
 - `/collectibles/1` → autographed picture of a dog
 - `/collectibles/99` → This item is not yet in stock. Check back soon!
+
+---
+
+## Route 4: Hello (Query Parameters)
+
+**Route:**
+
+
+**What it does**  
+Reads an optional name from the query string and responds with a greeting.
+
+If no name is provided, it responds with a generic greeting.
+
+**Why this matters**  
+This demonstrates how to use **query parameters** (`req.query`).
+
+Query parameters allow optional data to be passed into a route without changing the URL structure.
+
+**Examples**
+- `/hello?name=Thara` → `Hello, Thara!`
+- `/hello` → `Hello there!`
+
+---
+
+## Route 5: Shoes (Filtering with Query Parameters)
+
+**Route:**
+
+
+**What it does**  
+Returns a list of shoes.
+
+The list can be filtered using optional query parameters:
+- `min-price`
+- `max-price`
+- `type`
+
+If no filters are provided, all shoes are returned.
+
+**Why this matters**  
+This simulates how real APIs filter data.
+
+It demonstrates:
+- Reading multiple query parameters
+- Conditional filtering
+- Returning structured data as JSON
+
+**Examples**
+- `/shoes` → returns all shoes
+- `/shoes?type=sneaker` → returns only sneakers
+- `/shoes?min-price=50` → returns shoes costing 50 or more
+- `/shoes?min-price=50&max-price=200` → returns shoes within that price range
+
+---
+
+## Key Takeaways from This Lab
+
+- Express allows you to map URLs to specific logic.
+- Route parameters (`req.params`) come from the URL path.
+- Query parameters (`req.query`) come after `?` in the URL.
+- Converting and validating user input prevents unexpected behavior.
+- Backend routes often return JSON instead of HTML.
+- Small, focused routes make servers easier to understand and maintain.

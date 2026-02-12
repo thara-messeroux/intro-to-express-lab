@@ -55,3 +55,28 @@ Route parameters allow the server to read dynamic values directly from the URL p
 **Examples**
 - `/greetings/Thara` → `Hello there, Thara!`
 - `/greetings/Alex` → `Hello there, Alex!`
+
+---
+
+## Route 2: Roll the Dice
+
+**Route:**
+
+
+**What it does**  
+Takes a number from the URL and returns a random whole number between 0 and that number.
+
+If the value is not a number, it responds with an error message.
+
+**Why this matters**  
+This demonstrates:
+- Converting text to a number
+- Validating user input
+- Preventing server errors
+
+It also shows how route parameters can influence program logic.
+
+**Examples**
+- `/roll/6` → `You rolled a 4.`
+- `/roll/20` → `You rolled a 17.`
+- `/roll/potato` → `You must specify a number.`

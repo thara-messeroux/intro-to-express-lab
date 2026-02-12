@@ -38,3 +38,15 @@ Learning this helps you understand how:
 http://localhost:3000
 ```
 
+
+**What it does**  
+Takes a name from the URL and responds with a greeting.
+
+**Why this matters**  
+This demonstrates **route parameters** using `req.params`.
+
+Route parameters allow the server to read dynamic values directly from the URL path.
+
+**Examples**
+- `/greetings/Thara` → `Hello there, Thara!`
+- `/greetings/Alex` → `Hello there, Alex!`

@@ -37,6 +37,11 @@ Learning this helps you understand how:
 ```bash
 http://localhost:3000
 ```
+---
+
+## Route 1: Greet the User
+
+**Route:**
 
 
 **What it does**  

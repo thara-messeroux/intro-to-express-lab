@@ -62,7 +62,6 @@ Route parameters allow the server to read dynamic values directly from the URL p
 
 **Route:**
 
-
 **What it does**  
 Takes a number from the URL and returns a random whole number between 0 and that number.
 
@@ -80,3 +79,29 @@ It also shows how route parameters can influence program logic.
 - `/roll/6` → `You rolled a 4.`
 - `/roll/20` → `You rolled a 17.`
 - `/roll/potato` → `You must specify a number.`
+
+
+---
+
+## Route 3: Collectibles
+
+**Route:**
+
+
+**What it does (in plain English)**  
+Takes a number from the URL and returns an item from a predefined list of collectibles.
+
+If the index does not exist, it returns a message saying the item is not in stock.
+
+**Why this matters**  
+This demonstrates:
+- Accessing data from an array
+- Validating indexes
+- Handling out-of-range input safely
+
+It simulates how a real online store might look up products by ID.
+
+**Examples**
+- `/collectibles/0` → shiny ball
+- `/collectibles/1` → autographed picture of a dog
+- `/collectibles/99` → This item is not yet in stock. Check back soon!
